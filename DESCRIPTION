@@ -9,7 +9,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "asofigdl@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: This package provides data sets of REDD projects around the world. It also provides some tools for reporting REDD results and presents some relevant definitions.
+Description: This package is has two main purposes. The first one is provide information about REDD projects around the world; including definitions, forest data and maps. It also provides some tools for reporting REDD results as emission factors, montecarlo method.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
