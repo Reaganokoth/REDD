@@ -1,5 +1,5 @@
 Package: REDD
-Title: REDD projects for Central America
+Title: REDD+ projects
 Imports:
   stringr
 Version: 0.0.0.9000
