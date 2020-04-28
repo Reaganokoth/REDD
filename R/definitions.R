@@ -1,7 +1,7 @@
 #' @title Relevant definitions and forest facts
 #' @description This function provides some relevant definitions in REDD context and forest facts collected from un-redd.org. These are basic concepts that may change between the countries or projects.
 #' @param term character, the term to be explained. It must one of the words from this list: forest, afforestation, reforestation, bamboo, redwoods, mangroves, importance, floods, droughts, deforestation rate, temperature.
-#' @return A forest fact o definition of forest concepts
+#' @return A forest fact or definition of forest concepts
 #' @import stringr
 #' @export
 
