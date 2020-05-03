@@ -1,7 +1,12 @@
 Package: REDD
 Title: REDD+ projects
 Imports:
-  stringr
+  stringr,
+  httr, 
+  xml2, 
+  magrittr, 
+  pbapply, 
+  magick
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Andrea Sofía", 

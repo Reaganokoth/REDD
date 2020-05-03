@@ -1,6 +1,6 @@
 #' @title Relevant definitions and forest facts
 #' @description This function provides some relevant definitions in REDD context and forest facts collected from un-redd.org. These are basic concepts that may change between the countries or projects.
-#' @param term character, the term to be explained. It must one of the words from this list: forest, afforestation, reforestation, bamboo, redwoods, mangroves, importance, floods, droughts, deforestation rate, temperature.
+#' @param term character, the term to be explained. It must be one of the words from this list: forest, afforestation, reforestation, bamboo, redwoods, mangroves, importance, floods, droughts, deforestation rate, temperature.
 #' @return A forest fact or definition of forest concepts
 #' @import stringr
 #' @export
@@ -12,7 +12,7 @@ definitions<- function(term="auto"){
   term.low<-stringr::str_to_lower(term1, locale = "en")
 
   if(term.low=="auto"){
-    def <- "Please, use a term from the list to get the definition or forest fact"
+    def <- "Please, use a term from the list to get the definition or forest fact (forest, afforestation, reforestation), you can find the list in the description of the function"
   } else if (term.low== "forest"){
     def <-"'Forest is a large area of trees whose canopies cover at least 10 per cent of the sky spanning more than 0.5 hectares with trees higher than 5 meters and a canopy cover of more than 10 percent.' -UN-REDD"
   } else if (term.low == "afforestation"){
@@ -35,7 +35,7 @@ definitions<- function(term="auto"){
     def <-"'The Earth loses a forest area about the size of 40 football fields every minute.' -UN-REDD"
   } else if (term.low == "temperature"){
     def<-"'Trees could reduce temperatures in cities up to 8°C, lowering use of air conditioning and related emissions by up to 40 per cent.' -UN-REDD"
-  } else def<-"Please, use a term from the list to get the definition or forest fact"
+  } else def<-"Please, use a term from the list to get the definition or forest fact(forest, afforestation, reforestation), you can find the list in the description of the function"
 
   print(def)
 }
