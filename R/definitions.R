@@ -8,8 +8,13 @@
 
 definitions<- function(term="auto"){
 
+  #removes blank spaces
   term1<-stringr::str_remove(term, " ")
+
+  #changes all the characters to lowercase
   term.low<-stringr::str_to_lower(term1, locale = "en")
+
+  #sets all the definitions
   forest<-forest<-"'Forest is a large area of trees whose canopies cover at least 10 per cent of the sky spanning more than 0.5 hectares with trees higher than 5 meters and a canopy cover of more than 10 percent.' -UN-REDD"
   defores<- "'Deforestation is the process of converting forest land to another land use.  In other words, the primary use of the land ceases to be forest'-United Nations Environment Programme, 2018"
   deforate<-"'The Earth loses a forest area about the size of 40 football fields every minute.' -UN-REDD"
@@ -25,10 +30,15 @@ definitions<- function(term="auto"){
   temp<-"'Trees could reduce temperatures in cities up to 8°C, lowering use of air conditioning and related emissions by up to 40 per cent.' -UN-REDD"
   todas<-c(forest, defores, deforate, degra, affo, refo, bamboo, redwoods, mang, importance, flood, dry, temp)
 
-    if(term.low=="auto"){
+  #defines which definition will be shown as a result of the user request
+      if(term.low=="auto"){
     def <- todas
   } else if (term.low== "forest"){
     def <- forest
+  } else if (term.low == "deforestation"){
+    def<-defores
+  } else if (term.low == "degradation"){
+    def<-degra
   } else if (term.low == "afforestation"){
     def<-affo
   } else if (term.low == "reforestation"){
@@ -51,6 +61,7 @@ definitions<- function(term="auto"){
     def<-temp
   } else def<-"Please, use a term from the list to get the definition or forest fact(forest, afforestation, reforestation...), you can find the list in the description of the function or leave empty to read all"
 
+  #prints the requested definition
   print(def)
 }
 
