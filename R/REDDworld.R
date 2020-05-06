@@ -56,16 +56,16 @@ dplyr::mutate(redd_data,
               )
 dplyr::mutate(redd_data,
               emissions.den= emissions/area)
-View(redd_data)
+#View(redd_data)
 
 if (style == "static"){
   tmap::tmap_mode("plot")
 } else tmap::tmap_mode("view")
 
 tmap::tm_shape(redd_data)+
-  tmap::tm_polygons("Deforestation rate")+
+  tmap::tm_polygons("Forest_cover", convert2density = TRUE)+
   tmap::tmap_options(max.categories= 5)+
-  tm_layout(
-    title = "Deforestation rate in countries of REDD+ projects"
+  tmap::tm_layout(
+    title = "Forest cover in 2015 for countries of REDD+ projects (1000 ha/km2)"
   )
 }
