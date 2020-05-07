@@ -29,7 +29,7 @@ xml_prod<-xml2::xml_find_all(reply_content, "//table")
 
 xml2::xml_text(xml2::xml_children(xml2::xml_contents(xml2::xml_children(xml_prod)[[1]])))
 
-library(magrittr) #I did not understand how to call the function without the library
+#library(magrittr) #I did not understand how to call the function without the library
 
 #Extract the head of the table
 prod_head<-xml2::xml_children(xml_prod)[[1]]%>%
@@ -58,7 +58,7 @@ variable1<-stringr::str_remove(variable, " ")
 variable2<-stringr::str_to_lower(variable1, locale = "en")
 
 #Extract world map
-library(tmap)
+#library(tmap)
 
 data("World")
 
