@@ -9,6 +9,7 @@
 #' @import magick
 #' @import tmap
 #' @import dplyr
+#' @import stringr
 #' @export
 
 REDDworld<-function(variable="AUTO"){
@@ -50,6 +51,11 @@ products0<- do.call(rbind.data.frame, products_body)
 names(products0) <- c("name","GDP", "Forest_cover", "Deforestation rate", "emissions", "Funds", "View")
 products<-dplyr::mutate(products0, member="REDD+ projects")
 
+variable1<-stringr::str_remove(variable, " ")
+
+#changes all the characters to lowercase
+variable2<-stringr::str_to_lower(variable1, locale = "en")
+
 #Extract world map
 library(tmap)
 
@@ -65,7 +71,7 @@ tmap::tmap_mode("view")
 
 #Choose variable to map
 
-if(variable=="forestcover"){
+if(variable2=="forestcover"){
    tmap::tm_shape(redd_data)+
     tmap::tm_fill("forest.den",title="Forest density",
                   breaks = c(0, 0.10000, 0.20000,0.3, 0.4,0.50000, 0.6000, Inf),
@@ -75,7 +81,7 @@ if(variable=="forestcover"){
       title = "Forest cover in countries of REDD+ projects in 2015 (forest ha/km2)")+
     tmap::tm_view(view.legend.position = c("right","bottom"))
 
-} else if (variable=="emissions"){
+} else if (variable2=="emissions"){
   tmap::tm_shape(redd_data)+
   tmap::tm_fill("emissions.den",title="Emissions (Ton of CO2/km2)",
                 breaks = c(0, 300, 600,900, 1200,1500, Inf),

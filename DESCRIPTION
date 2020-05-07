@@ -7,7 +7,8 @@ Imports:
   magrittr, 
   pbapply, 
   magick,
-  tmap
+  tmap,
+  dplyr
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Andrea Sofía", 
@@ -15,7 +16,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "asofigdl@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: This package has two main purposes. The first one is to provide information about REDD projects around the world; including definitions, forest data and maps. The second one is to provide tools for reporting REDD results as a emission factors library, and montecarlo method.
+Description: This package has two main purposes. The first one is to provide information about REDD projects around the world; including definitions, forest data and maps. The second one is to provide tools for calculating CO2 emissions due to deforestation from the data of a land cover change sample. 
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
