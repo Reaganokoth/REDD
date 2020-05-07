@@ -1,6 +1,7 @@
 #' @title CO2 emissions due to deforestation
 #' @description This function calculates the CO2 emissions (in Ton CO2) related to deforestation (forestland that changes to other land cover).
 #' @param area numeric, the area (in hectares) of deforestation related to an specific land cover
+#' @param error numeric, error of the area (0-1)
 #' @param new_land_cover character, the new land cover of the area
 #' @param emission_factor numeric, the emission factor (in ton C/Hectare)
 #' @param error_ef numeric, the relative error of the emission factor in percentage (from 0-100)
@@ -12,7 +13,7 @@
 #' @import
 #' @export
 
-defor_emiss<-function(area="auto", new_land_cover="the new land cover", emission_factor, error_ef=0, points, total_area, years, total_points){
+defor_emiss<-function(area="auto", error=0, new_land_cover="the new land cover", emission_factor, error_ef=0, points, total_area, years, total_points){
 
    #If it is not provided, calculates the area using the number of samples for an specific class
   if(area=="auto") {

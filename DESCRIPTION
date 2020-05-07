@@ -6,7 +6,8 @@ Imports:
   xml2, 
   magrittr, 
   pbapply, 
-  magick
+  magick,
+  tmap
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Andrea Sofía", 
