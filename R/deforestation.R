@@ -11,7 +11,6 @@
 #' @param total_points numeric, number of total sample points
 #' @return CO2 deforestation emissions (in Ton CO2) for a certain land cover class
 #' @example defor_emiss(emission_factor = 117.06, points = 100, total_area = 9985930, years = 10, total_points = 10414)
-#' @import
 #' @export
 
 defor_emiss<-function(area="auto", error=0, new_land_cover="the new land cover", emission_factor, error_ef=0, points, total_area, years, total_points){
