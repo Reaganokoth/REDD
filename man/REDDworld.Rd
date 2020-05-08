@@ -4,7 +4,7 @@
 \alias{REDDworld}
 \title{REDD worldwide 2015}
 \usage{
-REDDworld(variable = "AUTO")
+REDDworld(variable = "AUTO", mode = "plot")
 }
 \arguments{
 \item{variable}{character, the information you would like to see: "forestcover" or "emissions", or leave empty to see the countries with REDD+ projects}

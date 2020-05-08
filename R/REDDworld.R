@@ -10,6 +10,7 @@
 #' @import tmap
 #' @import dplyr
 #' @import stringr
+#' @import leaflet
 #' @examples
 #' REDDworld("forest cover")
 #'
@@ -80,22 +81,44 @@ REDDmap<-(if(variable2=="forestcover"){
                   breaks = c(0, 0.10000, 0.20000,0.3, 0.4,0.50000, 0.6000, Inf),
                   textNA = "No REDD+ projects",
                   palette = ("Greens"))+
+    tmap::tm_compass(color.light = "grey90", size = 0.8) +
     tmap::tm_layout(
-      title = "Forest cover in countries of REDD+ projects in 2015 (forest ha/km2)")+
+      main.title = "Forest cover in countries of REDD+ projects in 2015 (forest ha/km2)",  main.title.size = 1,
+      panel.show=FALSE,
+      #legend.outside=TRUE,
+      #title.snap.to.legend=FALSE,
+      main.title.position=c("center", "top"),
+      legend.title.size=0.9,
+      legend.text.size=0.7)+
     tmap::tm_view(view.legend.position = c("right","bottom"))
 
 } else if (variable2=="emissions"){
   tmap::tm_shape(redd_data)+
+  tmap::tm_compass(color.light = "grey90", size = 0.95) +
   tmap::tm_fill("emissions.den",title="Emissions (Ton of CO2/km2)",
                 breaks = c(0, 300, 600,900, 1200,1500, Inf),
                 textNA = "No REDD+ projects",
                 palette = ("YlOrRd"))+
-  tmap::tm_layout(title = "Emissions from Land Use Change and Forestry in countries of REDD+ projects in 2016 (Ton of Co2/km2)")+
+  tmap::tm_layout(main.title = "Emissions from Land Use Change and Forestry in countries of REDD+ projects in 2016",
+                  main.title.size = 0.8,
+                  panel.show=FALSE,
+                  main.title.position=c("center", "top"),
+                  legend.title.size=0.7,
+                  legend.text.size=0.5)+
   tmap::tm_view(view.legend.position = c("right","bottom"))
 
 } else tmap::tm_shape(redd_data)+
-  tmap::tm_polygons("member")+
+  tmap::tm_fill("member",title="Country")+
+  tmap::tm_compass(color.light = "grey90") +
   tmap::tm_layout(
-    title = "Countries of REDD+ projects in 2015"))
+    main.title = "Countries of REDD+ projects in 2015", title.size = 1,
+    panel.show=FALSE,
+    #legend.outside=TRUE,
+    #title.snap.to.legend=FALSE,
+    main.title.position=c("center", "top"),
+    legend.title.size=0.9,
+    legend.text.size=0.7
+  ))
 REDDmap
 }
+
