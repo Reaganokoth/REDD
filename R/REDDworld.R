@@ -108,7 +108,7 @@ REDDmap<-(if(variable2=="forestcover"){
   tmap::tm_view(view.legend.position = c("right","bottom"))
 
 } else tmap::tm_shape(redd_data)+
-  tmap::tm_fill("member",title="Country")+
+  tmap::tm_fill("member",title="Country", textNA = "No REDD+ projects")+
   tmap::tm_compass(color.light = "grey90") +
   tmap::tm_layout(
     main.title = "Countries of REDD+ projects in 2015", title.size = 1,
