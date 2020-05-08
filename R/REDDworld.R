@@ -15,7 +15,7 @@
 #'
 #' @export
 
-REDDworld<-function(variable="AUTO"){
+REDDworld<-function(variable="AUTO", mode = "plot"){
 
 #base url
 url_api<- "http://www.reddprojectsdatabase.org/view/countries.php"
@@ -69,12 +69,12 @@ redd_data0<-merge(World, products, by="name", all=TRUE)
 redd_data1<-dplyr::mutate(redd_data0,             emissions.den= as.numeric(emissions)*1000000/(as.numeric(area)))
 redd_data<- dplyr::mutate(redd_data1,             forest.den= as.numeric(Forest_cover)*1000/(as.numeric(area)))
 
-#tmap::tmap_mode("view")
-tmap::tmap_mode("plot")
+if(mode=="view"){tmap::tmap_mode("view")
+  } else tmap::tmap_mode("plot")
 
 #Choose variable to map
 
-if(variable2=="forestcover"){
+REDDmap<-(if(variable2=="forestcover"){
    tmap::tm_shape(redd_data)+
     tmap::tm_fill("forest.den",title="Forest density",
                   breaks = c(0, 0.10000, 0.20000,0.3, 0.4,0.50000, 0.6000, Inf),
@@ -96,5 +96,6 @@ if(variable2=="forestcover"){
 } else tmap::tm_shape(redd_data)+
   tmap::tm_polygons("member")+
   tmap::tm_layout(
-    title = "Countries of REDD+ projects in 2015")
+    title = "Countries of REDD+ projects in 2015"))
+REDDmap
 }
