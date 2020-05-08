@@ -2,7 +2,6 @@
 #' @description Shows a map of the situation of forest cover or emissions in the countries of REDD+ projects with data from  CIFOR– CEC – CIRAD – IFRI, 2015 (http://www.reddprojectsdatabase.org/view/countries.php)
 #' @param variable character, the information you would like to see: "forestcover" or "emissions", or leave empty to see the countries with REDD+ projects
 #' @return A map of countries of REDD+ projects
-#' @example REDDworld("forestcover")
 #' @import httr
 #' @import xml2
 #' @import magrittr
