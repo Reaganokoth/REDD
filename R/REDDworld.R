@@ -5,7 +5,7 @@
 #' @example REDDworld("forestcover")
 #' @import httr
 #' @import xml2
-#' @importFrom magrittr
+#' @import magrittr
 #' @import pbapply
 #' @import magick
 #' @import tmap
