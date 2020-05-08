@@ -69,8 +69,8 @@ redd_data0<-merge(World, products, by="name", all=TRUE)
 redd_data1<-dplyr::mutate(redd_data0,             emissions.den= as.numeric(emissions)*1000000/(as.numeric(area)))
 redd_data<- dplyr::mutate(redd_data1,             forest.den= as.numeric(Forest_cover)*1000/(as.numeric(area)))
 
-#if(mode=="view"){tmap::tmap_mode("view")
-#  } else tmap::tmap_mode("plot")
+if(mode=="view"){tmap::tmap_mode("view")
+  } else tmap::tmap_mode("plot")
 
 #Choose variable to map
 
@@ -97,13 +97,5 @@ REDDmap<-(if(variable2=="forestcover"){
   tmap::tm_polygons("member")+
   tmap::tm_layout(
     title = "Countries of REDD+ projects in 2015"))
-show.map<-tmap::tmap_leaflet(
-  REDDmap,
-  mode = "view",
-  show = TRUE,
-  add.titles = TRUE,
-  in.shiny = FALSE
-)
-
-show.map
+REDDmap
 }
