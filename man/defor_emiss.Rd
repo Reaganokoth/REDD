@@ -5,24 +5,18 @@
 \title{CO2 emissions due to deforestation}
 \usage{
 defor_emiss(
-  area = "auto",
-  error = 0,
-  new_land_cover = "the new land cover",
   emission_factor,
   error_ef = 0,
   points,
   total_area,
   years,
-  total_points
+  total_points,
+  new_land_cover = "the new land cover",
+  area = "auto",
+  error = 0
 )
 }
 \arguments{
-\item{area}{numeric, the area (in hectares) of deforestation related to an specific land cover}
-
-\item{error}{numeric, error of the area (0-1)}
-
-\item{new_land_cover}{character, the new land cover of the area}
-
 \item{emission_factor}{numeric, the emission factor (in ton C/Hectare)}
 
 \item{error_ef}{numeric, the relative error of the emission factor in percentage (from 0-100)}
@@ -34,10 +28,20 @@ defor_emiss(
 \item{years}{numeric, number of years between the land cover change analysis}
 
 \item{total_points}{numeric, number of total sample points}
+
+\item{new_land_cover}{character, the new land cover of the area}
+
+\item{area}{numeric, the area (in hectares) of deforestation related to an specific land cover, if it is not calculated by the number of points}
+
+\item{error}{numeric, error of the area (0-1)}
 }
 \value{
 CO2 deforestation emissions (in Ton CO2) for a certain land cover class
 }
 \description{
 This function calculates the CO2 emissions (in Ton CO2) related to deforestation (forestland that changes to other land cover).
+}
+\examples{
+defor_emiss(emission_factor = 117.06, points = 100, total_area = 9985930, years = 10, total_points = 10414)
+
 }
