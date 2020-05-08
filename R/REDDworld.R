@@ -58,7 +58,7 @@ variable1<-stringr::str_remove(variable, " ")
 variable2<-stringr::str_to_lower(variable1, locale = "en")
 
 #Extract world map
-#library(tmap)
+library(tmap)
 
 data("World")
 
