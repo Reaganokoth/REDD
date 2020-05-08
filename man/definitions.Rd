@@ -15,3 +15,6 @@ A forest fact or definition of forest concepts
 \description{
 This function provides some relevant definitions in REDD context and forest facts collected from un-redd.org. These are basic concepts that may change between the countries or projects.
 }
+\examples{
+definitions("degradation")
+}

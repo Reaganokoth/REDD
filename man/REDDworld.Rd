@@ -15,3 +15,7 @@ A map of countries of REDD+ projects
 \description{
 Shows a map of the situation of forest cover or emissions in the countries of REDD+ projects with data from  CIFOR– CEC – CIRAD – IFRI, 2015 (http://www.reddprojectsdatabase.org/view/countries.php)
 }
+\examples{
+REDDworld("forest cover")
+
+}

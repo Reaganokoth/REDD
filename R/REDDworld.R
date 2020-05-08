@@ -10,6 +10,9 @@
 #' @import tmap
 #' @import dplyr
 #' @import stringr
+#' @examples
+#' REDDworld("forest cover")
+#'
 #' @export
 
 REDDworld<-function(variable="AUTO"){

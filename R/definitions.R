@@ -3,6 +3,8 @@
 #' @param term character, the term to be explained. It must be one of the words from this list: forest, deforestation, degradation, afforestation, reforestation, bamboo, redwoods, mangroves, importance, floods, droughts, deforestation rate, temperature.
 #' @return A forest fact or definition of forest concepts
 #' @import stringr
+#' @examples
+#' definitions("degradation")
 #' @export
 
 
