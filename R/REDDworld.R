@@ -15,7 +15,7 @@
 #'
 #' @export
 
-REDDworld<-function(variable="AUTO", mode = "view"){
+REDDworld<-function(variable="AUTO", mode = "plot"){
 
 #base url
 url_api<- "http://www.reddprojectsdatabase.org/view/countries.php"
@@ -97,5 +97,13 @@ REDDmap<-(if(variable2=="forestcover"){
   tmap::tm_polygons("member")+
   tmap::tm_layout(
     title = "Countries of REDD+ projects in 2015"))
-REDDmap
+show.map<-tmap_leaflet(
+  REDDmap,
+  mode = "view",
+  show = TRUE,
+  add.titles = TRUE,
+  in.shiny = FALSE
+)
+
+show.map
 }
