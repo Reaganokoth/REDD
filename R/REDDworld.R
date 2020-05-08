@@ -77,7 +77,7 @@ if(mode=="view"){tmap::tmap_mode("view")
 
 REDDmap<-(if(variable2=="forestcover"){
    tmap::tm_shape(redd_data)+
-    tmap::tm_fill("forest.den",title="Forest density",
+    tmap::tm_fill("forest.den",title="Forest density (forest ha/km2)",
                   breaks = c(0, 0.10000, 0.20000,0.3, 0.4,0.50000, 0.6000, Inf),
                   textNA = "No REDD+ projects",
                   palette = ("Greens"))+
@@ -88,8 +88,8 @@ REDDmap<-(if(variable2=="forestcover"){
       #legend.outside=TRUE,
       #title.snap.to.legend=FALSE,
       main.title.position=c("center", "top"),
-      legend.title.size=0.9,
-      legend.text.size=0.7)+
+      legend.title.size=0.7,
+      legend.text.size=0.5)+
     tmap::tm_view(view.legend.position = c("right","bottom"))
 
 } else if (variable2=="emissions"){
