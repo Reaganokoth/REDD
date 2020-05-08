@@ -63,10 +63,10 @@ variable2<-stringr::str_to_lower(variable1, locale = "en")
 #Extract world map
 
 
-mundo<-data("World", package = "tmap")
+data("World", package = "tmap")
 
 #include REDD data
-redd_data0<-merge(mundo, products, by="name", all=TRUE)
+redd_data0<-merge(World, products, by="name", all=TRUE)
 redd_data1<-dplyr::mutate(redd_data0,             emissions.den= as.numeric(emissions)*1000000/(as.numeric(area)))
 redd_data<- dplyr::mutate(redd_data1,             forest.den= as.numeric(Forest_cover)*1000/(as.numeric(area)))
 
