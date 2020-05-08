@@ -15,7 +15,7 @@
 #'
 #' @export
 
-REDDworld<-function(variable="AUTO", mode = "plot"){
+REDDworld<-function(variable="AUTO", mode = "view"){
 
 #base url
 url_api<- "http://www.reddprojectsdatabase.org/view/countries.php"
