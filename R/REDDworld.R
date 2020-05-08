@@ -69,7 +69,7 @@ data("World", package = "tmap")
 redd_data0<-merge(World, products, by="name", all=TRUE)
 redd_data1<-dplyr::mutate(redd_data0,             emissions.den= as.numeric(emissions)*1000000/(as.numeric(area)))
 redd_data<- dplyr::mutate(redd_data1,             forest.den= as.numeric(Forest_cover)*1000/(as.numeric(area)))
-
+View(redd_data)
 if(mode=="view"){tmap::tmap_mode("view")
   } else tmap::tmap_mode("plot")
 
