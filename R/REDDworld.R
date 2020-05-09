@@ -62,13 +62,19 @@ variable2<-stringr::str_to_lower(variable1, locale = "en")
 
 #Extract world map
 
-
 data("World", package = "tmap")
 
 #include REDD data
 redd_data0<-merge(World, products, by="name", all=TRUE)
-redd_data1<-dplyr::mutate(redd_data0,             emissions.den= as.numeric(emissions)*1000000/(as.numeric(area)))
-redd_data<- dplyr::mutate(redd_data1,             forest.den= as.numeric(Forest_cover)*1000/(as.numeric(area)))
+#test<-data.frame(as.numeric(redd_data0$emissions)*1000000/as.numeric(World$area))
+#test
+#name<- data.frame(c(World$name))
+#forest<-merge(name, test)
+#forest
+redd_data1<-dplyr::mutate(redd_data0,
+                          emissions.den= as.numeric(emissions)*1000000/(as.numeric(area)))
+redd_data<- dplyr::mutate(redd_data1,
+                          forest.den= as.numeric(Forest_cover)*1000/(as.numeric(area)))
 View(redd_data)
 if(mode=="view"){tmap::tmap_mode("view")
   } else tmap::tmap_mode("plot")
@@ -78,7 +84,7 @@ if(mode=="view"){tmap::tmap_mode("view")
 REDDmap<-(if(variable2=="forestcover"){
    tmap::tm_shape(redd_data)+
     tmap::tm_fill("forest.den",title="Forest density (forest ha/km2)",
-                  breaks = c(0, 0.10000, 0.20000,0.3, 0.4,0.50000, 0.6000, Inf),
+                  breaks = c(0, 20, 30, 40, 50, 60, 80, Inf),
                   textNA = "No REDD+ projects",
                   palette = ("Greens"))+
     tmap::tm_compass(color.light = "grey90", size = 0.8) +
@@ -96,7 +102,7 @@ REDDmap<-(if(variable2=="forestcover"){
   tmap::tm_shape(redd_data)+
   tmap::tm_compass(color.light = "grey90", size = 0.95) +
   tmap::tm_fill("emissions.den",title="Emissions (Ton of CO2/km2)",
-                breaks = c(0, 300, 600,900, 1200,1500, Inf),
+                breaks = c(-400, -200, 0, 200, 400, 600, Inf),
                 textNA = "No REDD+ projects",
                 palette = ("YlOrRd"))+
   tmap::tm_layout(main.title = "Emissions from Land Use Change and Forestry in countries of REDD+ projects in 2016",
