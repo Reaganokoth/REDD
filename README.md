@@ -9,7 +9,7 @@ The second one is to provide tools for calculating CO2 emissions due to deforest
 
 For the moment, it contains three functions: 
 
-"definitions", which provides some relevant definitions in REDD+ context and forest facts collected from un-redd.org. These are basic concepts that may change between the countries or projects.
+"definitions", which provides some relevant definitions in REDD+ context and forest facts collected from https://www.un-redd.org/forest-facts. These are basic concepts that may change between the countries or projects.
 
 "REDDworld", that shows a map of the situation of forest cover or emissions in the countries of REDD+ projects with data from  CIFOR– CEC – CIRAD – IFRI, 2015 (http://www.reddprojectsdatabase.org/view/countries.php)
 
